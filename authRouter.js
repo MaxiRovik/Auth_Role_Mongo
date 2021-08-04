@@ -11,7 +11,7 @@ router.post('/registration', [
     check('password', ' password must to be from 4 to 20 symbols').isLength({min:4, max:20})
     ], controller.registration);
 router.post('/login',controller.login);
-router.get('/users', authMiddleWare, roleMiddleware.getUsers);
+router.get('/users', authMiddleWare,/* or roleMiddleware([ADMIN or USER])*/  controller.getUsers);
 
 module.exports = router;
 

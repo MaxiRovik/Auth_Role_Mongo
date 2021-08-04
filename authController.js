@@ -63,7 +63,8 @@ class authController {
             const adminRole = new Role({value: "ADMIN"});
             await userRole.save();
             await adminRole.save();*/
-            res.json("server works");
+            const users = await User.find()
+            res.json(users);
 
         }catch(e){
 
